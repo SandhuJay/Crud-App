@@ -1,0 +1,32 @@
+<h3><a class="btn btn-secondary" href="/user"><i class="fa fa-plus"></i> Create New</a> <center>User List</center></h3>
+
+<div class="table-responsive-sm ">
+<table class="table ">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>City</th>
+            <th>Update</th>
+           <th>Delete</th>
+          
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+             <th scope="row">{{this.name}}</th>
+            {{!-- <td>{{this.name}}</td> --}}
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.city}}</td>
+            <td>
+                <a href="/user/{{this._id}}" class="color" style="margin: 5px;"><i class="fa fa-pencil fa-lg " aria-hidden="true"></i></a></td>
+            <td>   <a href="/user/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg " aria-hidden="true"></i></a></td>
+            
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</div>
